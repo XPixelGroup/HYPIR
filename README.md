@@ -8,7 +8,7 @@
 
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=XPixelGroup/HYPIR) [![Try a demo on Replicate](https://replicate.com/0x3f3f3f3fun/hypir-sd2/badge)](https://replicate.com/0x3f3f3f3fun/hypir-sd2) [![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/linxinqi/HYPIR-SD2) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1MbpICKc22S6ysD32uj3ORkqg6AgZrNpx?usp=sharing)
 
-[Xinqi Lin](https://0x3f3f3f3fun.github.io/)<sup>1,2</sup>, [Fanghua Yu](https://github.com/Fanghua-Yu)<sup>1</sup>, Jinfan Hu<sup>1,2</sup>, [Zhiyuan You](https://zhiyuanyou.github.io/)<sup>1,3</sup>, Wu Shi<sup>1</sup>, [Jimmy S. Ren](https://www.jimmyren.com/)<sup>4,5</sup>, [Jinjin Gu](https://www.jasongt.com/)<sup>6,\*</sup>, [Chao Dong](https://scholar.google.com.hk/citations?user=OSDCB0UAAAAJ)<sup>1,7,\*</sup>
+[Xinqi Lin](https://0x3f3f3f3fun.github.io/)<sup>1,2</sup>, [Fanghua Yu](https://github.com/Fanghua-Yu)<sup>1</sup>, [Jinfan Hu](https://j-fhu.github.io/)<sup>1,2</sup>, [Zhiyuan You](https://zhiyuanyou.github.io/)<sup>1,3</sup>, [Wu Shi](https://scholar.google.com/citations?user=pTH7MA4AAAAJ)<sup>1</sup>, [Jimmy S. Ren](https://www.jimmyren.com/)<sup>4,5</sup>, [Jinjin Gu](https://www.jasongt.com/)<sup>6,\*</sup>, [Chao Dong](https://scholar.google.com.hk/citations?user=OSDCB0UAAAAJ)<sup>1,7,\*</sup>
 
 \*: Corresponding author
 
