@@ -14,6 +14,18 @@
 
 <sup>1</sup>Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences<br><sup>2</sup>University of Chinese Academy of Sciences<br><sup>3</sup>The Chinese University of Hong Kong<br><sup>4</sup>SenseTime Research<br><sup>5</sup>Hong Kong Metropolitan University<br><sup>6</sup>INSAIT, Sofia University<br><sup>7</sup>Shenzhen University of Advanced Technology
 
+<table >
+  <tbody>
+    <tr align="center">
+      <td><img src="assets/inst_logos/siat.png"/ style="height:40px;"></td>
+      <td><img src="assets/inst_logos/cuhk.png" style="height:40px;"/></td>
+      <td><img src="assets/inst_logos/hkmu.png" style="height:40px;"/></td>
+      <td><img src="assets/inst_logos/insait.png" style="height:40px;"/></td>
+      <td><img src="assets/inst_logos/suat.png" style="height:40px;"/></td>
+    </tr>
+  </tbody>
+</table>
+
 <p align="center">
     <img src="assets/teaser.png">
 </p>
