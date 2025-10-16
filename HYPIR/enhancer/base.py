@@ -113,13 +113,17 @@ class BaseEnhancer:
         ph = (h1 + vae_scale_factor - 1) // vae_scale_factor * vae_scale_factor - h1
         pw = (w1 + vae_scale_factor - 1) // vae_scale_factor * vae_scale_factor - w1
         lq = F.pad(lq, (0, pw, 0, ph), mode="constant", value=0)
-        with enable_tiled_vae(
-            self.vae,
-            is_decoder=False,
-            tile_size=patch_size,
-            dtype=self.weight_dtype,
-        ):
-            z_lq = self.vae.encode(lq.to(self.weight_dtype)).latent_dist.sample()
+        # Encode
+        z_lq = make_tiled_fn(
+            fn=lambda lq_tile: self.vae.encode(lq_tile).latent_dist.sample(),
+            size=patch_size,
+            stride=stride,
+            scale_type="down",
+            scale=vae_scale_factor,
+            progress=True,
+            channel=self.vae.config.latent_channels,
+            desc="VAE encoding",
+        )(lq.to(self.weight_dtype))
 
         # Generator forward
         self.prepare_inputs(batch_size=bs, prompt=prompt)
@@ -129,14 +133,20 @@ class BaseEnhancer:
             stride=stride // vae_scale_factor,
             progress=True,
             desc="Generator Forward",
-        )(z_lq)
-        with enable_tiled_vae(
-            self.vae,
-            is_decoder=True,
-            tile_size=patch_size // vae_scale_factor,
-            dtype=self.weight_dtype,
-        ):
-            x = self.vae.decode(z.to(self.weight_dtype)).sample.float()
+        )(z_lq.to(self.weight_dtype))
+        
+        # Decode
+        x = make_tiled_fn(
+            fn=lambda lq_tile: self.vae.decode(lq_tile).sample.float(),
+            size=patch_size//vae_scale_factor,
+            stride=stride//vae_scale_factor,
+            scale_type="up",
+            scale=vae_scale_factor,
+            progress=True,
+            channel=3,
+            desc="VAE decoding",
+        )(z.to(self.weight_dtype))
+        
         x = x[..., :h1, :w1]
         x = (x + 1) / 2
         x = F.interpolate(input=x, size=(h0, w0), mode="bicubic", antialias=True)
